@@ -22,6 +22,17 @@ fetch("https:apis.scrimba.com/unsplash/photos/random?orientation=landscape&query
         document.getElementById("crypto-top").innerHTML =`
         <img src="${data.image.small}" />
         <span>${data.name}</span>`
+
+        document.getElementById("crypto").innerHTML = `
+            <p>🎯: R${data.market_data.current_price.zar}</p>
+            <p>👆: R${data.market_data.high_24h.zar}</p>
+            <p>👇: R${data.market_data.low_24h.zar}</p> `
     })
-        console.log(data)
     .catch(error => console.error(error))
+
+    Function getCurrentTime() {
+        const date = new Date()
+        document.getElementrById("time").textContent = date.toLocaleTimeString("en-zar", {timeStyle: "short"})
+    }
+
+    setInterval(getCurrentTime, 1000)
