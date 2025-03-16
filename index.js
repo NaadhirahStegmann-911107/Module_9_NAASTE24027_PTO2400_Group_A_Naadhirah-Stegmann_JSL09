@@ -1,5 +1,5 @@
 try {
-    const res = await fetch("https:apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature")
+    const res = await fetch("https:apis/unsplash/photos/random?orientation=landscape&query=nature")
     const data = await response.json()
     document.body.style.backgroundImage = `url(${data.urls.full})`
     document.getElementById("author").textContent = `By: ${data.user.name}`  
@@ -25,9 +25,9 @@ document.getElementById("crypto").innerHTML = `
     <p>👇: R${data.market_data.low_24h.zar}</p> `
 }catch(error) {console.error(error)}
 
-Function getCurrentTime() {
+function getCurrentTime() {
     const date = new Date()
-    document.getElementrById("time").textContent = date.toLocaleTimeString("en-zar", {timeStyle: "short"})
+    document.getElementById("time").textContent = date.toLocaleTimeString("en-zar", {timeStyle: "short"})
 }
     setInterval(getCurrentTime, 1000)
 
