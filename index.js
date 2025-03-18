@@ -1,3 +1,4 @@
+console.log("Hello World");
 fetch("https://apis/unsplash/photos/random?orientation=landscape&query=nature")
     .then(res => res.json())
     .then(data => {
@@ -18,6 +19,7 @@ fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
     return res.json()
     })
     .then(data => {
+        console.log(data)
         document.getElementById("crypto-top").innerHTML =`
             <img src="${data.image.small}" />
             <span>${data.name}</span>`
